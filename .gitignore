@@ -1,0 +1,7 @@
+package-lock.json
+package.json
+
+_metadata.json
+node_modules/
+.vite\deps\*
+

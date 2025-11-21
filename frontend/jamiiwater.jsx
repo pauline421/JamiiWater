@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { AlertTriangle, MapPin, Droplet, Zap, MessageCircle, BarChart3, Menu, X, Sun, Moon, LogOut, User, Mail, Lock, Globe } from 'lucide-react';
+import { AlertTriangle, Map, Droplet, Zap, MessageCircle, BarChart3, Menu, X, LocateFixed, Sun, Moon, LogOut, User, Mail, Lock, Languages } from 'lucide-react';
 
 // --- Configuration ---
 const API_BASE_URL = 'http://localhost:3000';
@@ -25,7 +25,7 @@ const languageMap = {
         // Nav Items
         nav: [
             { id: 'tracking', icon: Droplet, title: 'Water Levels', description: 'Monitor tank levels and usage' },
-            { id: 'locate', icon: MapPin, title: 'Find Water Source', description: 'Locate the nearest clean source' },
+            { id: 'locate', icon: Map, title: 'Find Water Source', description: 'Locate the nearest clean source' },
             { id: 'report', icon: AlertTriangle, title: 'Report Issue', description: 'Report broken pumps or empty sources' },
             { id: 'alerts', icon: Zap, title: 'Rationing Alerts', description: 'View service disruptions & advisories' },
             { id: 'ai', icon: BarChart3, title: 'AI Prediction', description: 'Rainfall and demand forecasts' },
@@ -80,7 +80,7 @@ const languageMap = {
         // Nav Items
         nav: [
             { id: 'tracking', icon: Droplet, title: 'Viwango vya Maji', description: 'Fuatilia viwango vya tanki na matumizi' },
-            { id: 'locate', icon: MapPin, title: 'Pata Chanzo', description: 'Tafuta chanzo cha karibu cha maji safi' },
+            { id: 'locate', icon: Map, title: 'Pata Chanzo', description: 'Tafuta chanzo cha karibu cha maji safi' },
             { id: 'report', icon: AlertTriangle, title: 'Ripoti Tatizo', description: 'Ripoti pampu zilizovunjika au vyanzo vitupu' },
             { id: 'alerts', icon: Zap, title: 'Tahadhari za Mgao', description: 'Angalia usumbufu wa huduma & ushauri' },
             { id: 'ai', icon: BarChart3, title: 'Utabiri wa AI', description: 'Utabiri wa mvua na mahitaji' },
@@ -480,7 +480,7 @@ const GeolocatingSource = ({ t }) => {
             <SectionTitle>{t.locateTitle}</SectionTitle>
             <div className="p-6 bg-blue-100 dark:bg-blue-900 rounded-xl shadow-inner mb-6">
                 <p className="text-lg font-semibold text-blue-700 dark:text-blue-300 flex items-center">
-                    <MapPin className="w-6 h-6 mr-2" />
+                    <LocateFixed className="w-6 h-6 mr-2" />
                     {t.currentLocation('Lavington Estate, Nairobi')}
                 </p>
             </div>
@@ -838,7 +838,7 @@ const AppContent = () => {
                             onClick={() => setLanguage(language === 'en' ? 'sw' : 'en')}
                             className="flex items-center justify-center w-full py-2 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-xl shadow-md hover:bg-blue-200 dark:hover:bg-blue-800 transition duration-200 font-medium"
                         >
-                            <Globe className="w-5 h-5 mr-2" />
+                            <Languages className="w-5 h-5 mr-2" />
                             {t.lang}
                         </button>
 
@@ -883,7 +883,7 @@ const AppContent = () => {
                                 onClick={() => setLanguage(language === 'en' ? 'sw' : 'en')}
                                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-blue-600 dark:text-blue-400"
                             >
-                                <Globe className="w-6 h-6" />
+                                <Languages className="w-6 h-6" />
                             </button>
                             <button 
                                 onClick={() => setDarkMode(!darkMode)} 
